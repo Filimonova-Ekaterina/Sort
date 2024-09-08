@@ -3,17 +3,17 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-const int encoding_identifier = 1251; //код для использования русского языка
-const int array_size = 25; //размер массива
+const int encoding_identifier = 1251; 
+const int array_size = 25; 
 
-void swap(int& element1, int& element2) //функция перестановки двух элементов массива
+void swap(int& element1, int& element2) 
 {
 	int tmp = element1;
 	element1 = element2;
 	element2 = tmp;
 }
 
-void insertion_sort(int arr[]) //функция сортировки вставками
+void insertion_sort(int arr[]) 
 {
 	for (int counter = 1; counter < array_size; counter++)
 		for (int counter1 = counter; counter1 > 0; counter1--)
@@ -22,7 +22,7 @@ void insertion_sort(int arr[]) //функция сортировки вставками
 		}
 }
 
-void selection_sort(int arr[])//функция сортировки выбором
+void selection_sort(int arr[])
 {
 	for (int counter = 0; counter < array_size; counter++)
 	{
@@ -34,7 +34,7 @@ void selection_sort(int arr[])//функция сортировки выбором
 		swap(arr[counter], arr[min]);
 	}
 }
-void random_sort(int arr[]) //функция случайной сортировки
+void random_sort(int arr[]) 
 {
 	int sum = 0;
 	for (int counter = 0; counter < array_size-1; counter++) { if (arr[counter] <= arr[counter + 1])sum++; }
@@ -55,29 +55,29 @@ int main()
 	SetConsoleCP(encoding_identifier);
 	SetConsoleOutputCP(encoding_identifier);
 	int arr[array_size],arr1[array_size], arr2[array_size];
-	cout << "Начальный массив:\n";
+	cout << "Initial array:\n";
 	srand(time(0));
 	for (int counter = 0; counter < array_size; counter++)
 	{
-		arr[counter] = rand() % array_size;//заполнение массива случайными числами от 0 до значения размера массива
+		arr[counter] = rand() % array_size;
 		cout << arr[counter] << ' ';
 	}
 	cout << "\n";
 	for (int counter = 0; counter < array_size; counter++)
 	{
-		arr1[counter] = rand() % array_size;//заполнение массива случайными числами от 0 до значения размера массива
+		arr1[counter] = rand() % array_size;
 		cout << arr1[counter] << ' ';
 	}
 	cout << "\n";
 	for (int counter = 0; counter < array_size; counter++)
 	{
-		arr2[counter] = rand() % array_size;//заполнение массива случайными числами от 0 до значения размера массива
+		arr2[counter] = rand() % array_size;
 		cout << arr1[counter] << ' ';
 	}
 	insertion_sort(arr);
 	selection_sort(arr1);
 	random_sort(arr2);
-	cout << "\nОтсортированный массив:\n";
+	cout << "\nSort array:\n";
 	for (int counter = 0; counter < array_size; counter++)
 	{
 		cout << arr[counter] << ' ';
